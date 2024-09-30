@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST')
 }
 ?>
 
-<h2> Register </h2>
+<h2> Register Doktor </h2>
 <h4>* required field </h4>
 <form action="registerDoktor.php" method="post">
 
@@ -86,7 +86,7 @@ value="<?php if (isset($_POST['FirstName'])) echo $_POST['FirstName']; ?>" /></p
 <input id="LastName" type="text" name="LastName" size="30" maxlength="150"
 value="<?php if (isset($_POST['LastName'])) echo $_POST['LastName']; ?>" /></p>
 
-<p><label class="label" for="Specialization">:Insurance Number: </label>
+<p><label class="label" for="Specialization">:Specialization: </label>
 <input id="Specialization" type="text" name="Specialization" size="30" maxlength="150"
 value="<?php if (isset($_POST['Specialization'])) echo $_POST['Specialization']; ?>" /></p>
 
