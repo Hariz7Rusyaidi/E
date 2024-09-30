@@ -33,17 +33,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
         $p = FALSE; 
         echo '<p class = "error"> You Forgor To Enter Your PASSWORD.</p>';
     }
-}
 
-if ($un && $p)
-{
+
+    if ($un && $p)
+    {
     $q = "SELECT ID, FirstName, LastName, Specialization, Password FROM Doktor WHERE (ID = '$un' AND Password = '$p')";
 
     $result = mysql_query ($connect, $q);
-
-    
-    if (@mysqli_num_rows ($result) == 1)
-    {
+    }
+        if (@mysqli_num_rows ($result) == 1)
+        {
         session_start();
 
         $_SESSION = mysqli_fetch_array ($result, MYSQLI_ASSOC);
@@ -54,11 +53,11 @@ if ($un && $p)
 
         mysqli_free_result ($result);
         mysqli_close ($connect);
-    }
-    else 
-    {
+        }
+        else 
+        {
         echo '<p class = "error"> The Username and Password Entered Do Not Match our Records <br> Perhaps You Need to Register, Just Click The Register Button </p>';
-    }
+        }
     
     mysqli_close ($connect);
 }
